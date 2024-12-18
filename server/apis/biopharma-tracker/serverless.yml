@@ -1,0 +1,18 @@
+org: acoer
+app: biopharma-tracker-functions
+service: biopharma-tracker
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 60
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi: '*'
+
+plugins:
+  - serverless-offline
